@@ -20,6 +20,8 @@ public class Supplier
 				if(id.equals("") || id.contains(" "))
 					System.out.println("Error!  please enter a valid id!");
 			}
+			
+			
 			while(id.equals("") || id.contains(" "));
 		
 			do
