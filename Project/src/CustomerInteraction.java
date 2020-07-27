@@ -14,26 +14,62 @@ public class CustomerInteraction {
 		boolean accountSuccess = false;
 		do
 		{
+			do
+			{
+			
+				System.out.println("Please enter an id:\t");
+				id = r.nextLine();
+				if(id.equals("") || id.contains(" "))
+					System.out.println("Error!  please enter a valid id!");
+			}
+			while(id.equals("") || id.contains(" "));
+			
+			do
+			{
 		
-		r.nextLine();
-		System.out.println("Please enter an id:\t");
-		id = r.nextLine();
+				System.out.println("Please enter a password:\t");
+				password = r.nextLine();
+				if(password.equals("") || password.contains(" "))
+					System.out.println("Error!  please enter a valid password!");
+			}
+			while(password.equals("") || password.contains(" "));
 		
-		System.out.println("Please enter a password:\t");
-		password = r.nextLine();
+			do
+			{
+				System.out.println("Please enter a name");
+				name = r.nextLine();
+				if(name.equals(""))
+					System.out.println("Error!  please enter a valid name!");
+			}
+			while(name.equals(""));
 		
-		System.out.println("Please enter a name");
-		name = r.nextLine();
-		
-		System.out.println("Please enter an address");
-		address = r.nextLine();
-		
-		System.out.println("Please enter a phone number");
-		phoneNumber = r.nextLine();
-		
-		System.out.println("Please enter a credit card number");
-		
-		creditCard = r.nextLine();
+			do
+			{
+				System.out.println("Please enter an address");
+				address = r.nextLine();
+				if(address.equals(""))
+					System.out.println("Error!  please enter a valid address!");
+			}
+			while(address.equals(""));
+			
+			do
+			{
+				System.out.println("Please enter a phone number");
+				phoneNumber = r.nextLine();
+				if(phoneNumber.equals(""))
+					System.out.println("Error!  please enter a valid phone number!");
+			}
+			while(phoneNumber.equals(""));
+			
+			do
+			{
+				System.out.println("Please enter a credit card number");
+				creditCard = r.nextLine();
+				
+				if(creditCard.equals(""))
+					System.out.println("Error!  please enter a valid credit card number!");
+			}
+			while(creditCard.equals(""));
 		
 			try
 			{
@@ -102,7 +138,7 @@ public class CustomerInteraction {
 	public static void main(String[] args) throws IOException
 	{
 		
-		int userInput;
+		String userInput;
 		
 		System.out.println("Welcome customer");
 		
@@ -110,28 +146,32 @@ public class CustomerInteraction {
 		System.out.println("0 - create account");
 		System.out.println("1 - login");
 		System.out.println("2 - logout");
+		System.out.println("-1 - exit");
 		
 		do
 		{
+			
+			
 			System.out.print("Please enter input:\t");
-			userInput = r.nextInt();
+			userInput = r.nextLine();
 			
 			switch(userInput)
 			{
-				case 0:
+				case "0":
 					createAccount();
 					break;
-				case 1:
+				case "1":
 					login();
 					break;
-				case 2:
+				case "2":
 					logout();
+					break;
 					
 			}
 			
 			
 		}
-		while(userInput != -1);
+		while(!userInput.equals("-1"));
 	}
 
 }

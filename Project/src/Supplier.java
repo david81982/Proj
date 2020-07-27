@@ -12,11 +12,27 @@ public class Supplier
 		boolean accountSuccess = false;
 		do
 		{
-		System.out.println("Please enter an id:\t");
-		id = r.next();
+			do
+			{
+			
+				System.out.println("Please enter an id:\t");
+				id = r.nextLine();
+				if(id.equals("") || id.contains(" "))
+					System.out.println("Error!  please enter a valid id!");
+			}
+			while(id.equals("") || id.contains(" "));
 		
-		System.out.println("Please enter a password:\t");
-		password = r.next();
+			do
+			{
+		
+				System.out.println("Please enter a password:\t");
+				password = r.nextLine();
+				if(password.equals("") || password.contains(" "))
+					System.out.println("Error!  please enter a valid password!");
+			}
+			while(password.equals("") || password.contains(" "));
+		
+		
 			try
 			{
 				accountSuccess = CustomerAccount.createNewAccountSupplier(id, password);
@@ -48,10 +64,10 @@ public class Supplier
 		String id, password;
 		
 		System.out.println("Please enter an id:\t");
-		id = r.next();
+		id = r.nextLine();
 		
 		System.out.println("Please enter a password:\t");
-		password = r.next();
+		password = r.nextLine();
 		try
 		{
 			if(shipperAccount.LogInAccount(id, password))
@@ -82,7 +98,7 @@ public class Supplier
 	
 	public static void main(String[] args) throws IOException
 	{
-		int userInput;
+		String userInput;
 		
 		System.out.println("Welcome supplier");
 		
@@ -95,17 +111,17 @@ public class Supplier
 		do
 		{
 			System.out.print("Please enter input:\t");
-			userInput = r.nextInt();
+			userInput = r.nextLine();
 			
 			switch(userInput)
 			{
-				case 0:
+				case "0":
 					createAccount();
 					break;
-				case 1:
+				case "1":
 					login();
 					break;
-				case 2:
+				case "2":
 					logout();
 					break;					
 				
@@ -114,7 +130,7 @@ public class Supplier
 			
 			
 		}
-		while(userInput != -1);
+		while(!userInput.equals("-1"));
 	}
 
 }
