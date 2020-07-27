@@ -21,6 +21,7 @@ public class CustomerInteraction {
 				id = r.nextLine();
 				if(id.equals("") || id.contains(" "))
 					System.out.println("Error!  please enter a valid id!");
+				
 			}
 			while(id.equals("") || id.contains(" "));
 			
@@ -31,33 +32,40 @@ public class CustomerInteraction {
 				password = r.nextLine();
 				if(password.equals("") || password.contains(" "))
 					System.out.println("Error!  please enter a valid password!");
+				
 			}
 			while(password.equals("") || password.contains(" "));
 		
 			do
 			{
+
 				System.out.println("Please enter a name");
 				name = r.nextLine();
 				if(name.equals(""))
 					System.out.println("Error!  please enter a valid name!");
+				
 			}
 			while(name.equals(""));
 		
 			do
 			{
+				
 				System.out.println("Please enter an address");
 				address = r.nextLine();
 				if(address.equals(""))
 					System.out.println("Error!  please enter a valid address!");
+				
 			}
 			while(address.equals(""));
 			
 			do
 			{
+				
 				System.out.println("Please enter a phone number");
 				phoneNumber = r.nextLine();
 				if(phoneNumber.equals(""))
 					System.out.println("Error!  please enter a valid phone number!");
+				
 			}
 			while(phoneNumber.equals(""));
 			
@@ -90,11 +98,12 @@ public class CustomerInteraction {
 		System.out.println("Account created");
 	}
 	
+	
 	public static void login()
 	{
 		if(customerAccount.getID() != null)
 		{
-			System.out.println("error - account already exists.");
+			System.out.println("Error - account already exists.");
 			return;
 		}
 		
@@ -108,10 +117,12 @@ public class CustomerInteraction {
 		password = r.next();
 		try
 		{
+			
 			if(customerAccount.LogInAccount(id, password))
 				System.out.println("Login successful!");
 			else
 				System.out.println("Login not successful - password was incorrect!");
+			
 		}
 		catch(FileNotFoundException invalidFileName)
 		{
@@ -150,7 +161,6 @@ public class CustomerInteraction {
 		
 		do
 		{
-			
 			
 			System.out.print("Please enter input:\t");
 			userInput = r.nextLine();

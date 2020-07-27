@@ -10,6 +10,7 @@ public class Supplier
 	{
 		String id, password;
 		boolean accountSuccess = false;
+		
 		do
 		{
 			do
@@ -17,20 +18,23 @@ public class Supplier
 			
 				System.out.println("Please enter an id:\t");
 				id = r.nextLine();
+				
+				
 				if(id.equals("") || id.contains(" "))
 					System.out.println("Error!  please enter a valid id!");
 			}
-			
-			
 			while(id.equals("") || id.contains(" "));
 		
 			do
 			{
-		
+				
 				System.out.println("Please enter a password:\t");
 				password = r.nextLine();
+				
+				
 				if(password.equals("") || password.contains(" "))
 					System.out.println("Error!  please enter a valid password!");
+				
 			}
 			while(password.equals("") || password.contains(" "));
 		
@@ -72,6 +76,7 @@ public class Supplier
 		password = r.nextLine();
 		try
 		{
+			
 			if(shipperAccount.LogInAccount(id, password))
 				System.out.println("Login successful!");
 			else
@@ -86,6 +91,7 @@ public class Supplier
 
 	public static void logout()
 	{
+		
 		if(shipperAccount.LogOutAccount())
 		{
 			System.out.println("The account was successfully logged out");
@@ -94,6 +100,7 @@ public class Supplier
 		{
 			System.out.println("Error - account already logged out");
 		}
+		
 		
 	}
 	
